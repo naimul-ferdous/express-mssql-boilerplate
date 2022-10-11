@@ -1,59 +1,46 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('SECURITYDETAILS', {
-    SECURITYDETAILID: {
-      autoIncrement: true,
-      type: DataTypes.INTEGER,
+  return sequelize.define('ACUnlockComb', {
+    UnlockCombID: {
+      type: DataTypes.SMALLINT,
       allowNull: false,
       primaryKey: true
     },
-    USERID: {
-      type: DataTypes.INTEGER,
+    Name: {
+      type: DataTypes.STRING(30),
       allowNull: true
     },
-    DEPTID: {
+    Group01: {
       type: DataTypes.SMALLINT,
       allowNull: true
     },
-    SCHEDULE: {
+    Group02: {
       type: DataTypes.SMALLINT,
       allowNull: true
     },
-    USERINFO: {
+    Group03: {
       type: DataTypes.SMALLINT,
       allowNull: true
     },
-    ENROLLFINGERS: {
+    Group04: {
       type: DataTypes.SMALLINT,
       allowNull: true
     },
-    REPORTVIEW: {
+    Group05: {
       type: DataTypes.SMALLINT,
-      allowNull: true
-    },
-    REPORT: {
-      type: DataTypes.STRING(10),
-      allowNull: true
-    },
-    ReadOnly: {
-      type: DataTypes.BOOLEAN,
-      allowNull: true
-    },
-    FullControl: {
-      type: DataTypes.BOOLEAN,
       allowNull: true
     }
   }, {
     sequelize,
-    tableName: 'SECURITYDETAILS',
+    tableName: 'ACUnlockComb',
     schema: 'dbo',
     timestamps: false,
     indexes: [
       {
-        name: "NAMEID2",
+        name: "PK__ACUnlock__1F6C4570129C2445",
         unique: true,
         fields: [
-          { name: "SECURITYDETAILID" },
+          { name: "UnlockCombID" },
         ]
       },
     ]

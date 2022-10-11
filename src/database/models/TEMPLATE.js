@@ -46,6 +46,28 @@ module.exports = function(sequelize, DataTypes) {
     USETYPE: {
       type: DataTypes.SMALLINT,
       allowNull: true
+    },
+    EMACHINENUM: {
+      type: DataTypes.STRING(3),
+      allowNull: true
+    },
+    TEMPLATE1: {
+      type: DataTypes.BLOB,
+      allowNull: true
+    },
+    Flag: {
+      type: DataTypes.SMALLINT,
+      allowNull: true,
+      defaultValue: 1
+    },
+    DivisionFP: {
+      type: DataTypes.SMALLINT,
+      allowNull: true,
+      defaultValue: 0
+    },
+    TEMPLATE4: {
+      type: DataTypes.BLOB,
+      allowNull: true
     }
   }, {
     sequelize,

@@ -56,8 +56,8 @@ export const getCheckInOuts = async (req, res, next) => {
         offset,
         limit: perPage,
         // include: {
-        //   model: models.user,
-        //   attributes: ['id', 'firstName', 'lastName'],
+        //   model: models.USERINFO,
+        //   attributes: ['USERID', 'NAME', 'GENDER'],
         // },
         // order: [['createdAt', 'DESC']],
       });

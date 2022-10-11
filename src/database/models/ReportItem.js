@@ -1,59 +1,59 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('SECURITYDETAILS', {
-    SECURITYDETAILID: {
+  return sequelize.define('ReportItem', {
+    RIID: {
       autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
     },
-    USERID: {
+    RIIndex: {
       type: DataTypes.INTEGER,
       allowNull: true
     },
-    DEPTID: {
+    ShowIt: {
       type: DataTypes.SMALLINT,
       allowNull: true
     },
-    SCHEDULE: {
+    RIName: {
+      type: DataTypes.STRING(12),
+      allowNull: true
+    },
+    UnitName: {
+      type: DataTypes.STRING(6),
+      allowNull: true
+    },
+    Formula: {
+      type: DataTypes.BLOB,
+      allowNull: false
+    },
+    CalcBySchClass: {
       type: DataTypes.SMALLINT,
       allowNull: true
     },
-    USERINFO: {
+    StatisticMethod: {
       type: DataTypes.SMALLINT,
       allowNull: true
     },
-    ENROLLFINGERS: {
+    CalcLast: {
       type: DataTypes.SMALLINT,
       allowNull: true
     },
-    REPORTVIEW: {
-      type: DataTypes.SMALLINT,
-      allowNull: true
-    },
-    REPORT: {
-      type: DataTypes.STRING(10),
-      allowNull: true
-    },
-    ReadOnly: {
-      type: DataTypes.BOOLEAN,
-      allowNull: true
-    },
-    FullControl: {
-      type: DataTypes.BOOLEAN,
+    Notes: {
+      type: DataTypes.BLOB,
       allowNull: true
     }
   }, {
     sequelize,
-    tableName: 'SECURITYDETAILS',
+    tableName: 'ReportItem',
     schema: 'dbo',
     timestamps: false,
     indexes: [
       {
-        name: "NAMEID2",
+        name: "PK__ReportIt__464E992E68179541",
         unique: true,
         fields: [
-          { name: "SECURITYDETAILID" },
+          { name: "RIID" },
         ]
       },
     ]

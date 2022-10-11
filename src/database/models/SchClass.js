@@ -62,6 +62,20 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.SMALLINT,
       allowNull: true,
       defaultValue: 1
+    },
+    WorkDay: {
+      type: DataTypes.FLOAT,
+      allowNull: true,
+      defaultValue: 1
+    },
+    SensorID: {
+      type: DataTypes.STRING(5),
+      allowNull: true
+    },
+    WorkMins: {
+      type: DataTypes.FLOAT,
+      allowNull: true,
+      defaultValue: 0
     }
   }, {
     sequelize,

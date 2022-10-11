@@ -8,7 +8,7 @@ module.exports = function(sequelize, DataTypes) {
       primaryKey: true
     },
     BADGENUMBER: {
-      type: DataTypes.STRING(12),
+      type: DataTypes.STRING(24),
       allowNull: false
     },
     SSN: {
@@ -16,11 +16,11 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     NAME: {
-      type: DataTypes.STRING(20),
+      type: DataTypes.STRING(40),
       allowNull: true
     },
     GENDER: {
-      type: DataTypes.STRING(2),
+      type: DataTypes.STRING(8),
       allowNull: true
     },
     TITLE: {
@@ -40,7 +40,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     STREET: {
-      type: DataTypes.STRING(40),
+      type: DataTypes.STRING(80),
       allowNull: true
     },
     CITY: {
@@ -111,7 +111,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     PASSWORD: {
-      type: DataTypes.STRING(20),
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     LUNCHDURATION: {
@@ -126,6 +126,107 @@ module.exports = function(sequelize, DataTypes) {
     PHOTO: {
       type: DataTypes.BLOB,
       allowNull: true
+    },
+    Notes: {
+      type: DataTypes.BLOB,
+      allowNull: true
+    },
+    privilege: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      defaultValue: 0
+    },
+    InheritDeptSch: {
+      type: DataTypes.SMALLINT,
+      allowNull: true,
+      defaultValue: 1
+    },
+    InheritDeptSchClass: {
+      type: DataTypes.SMALLINT,
+      allowNull: true,
+      defaultValue: 1
+    },
+    AutoSchPlan: {
+      type: DataTypes.SMALLINT,
+      allowNull: true,
+      defaultValue: 1
+    },
+    MinAutoSchInterval: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      defaultValue: 24
+    },
+    RegisterOT: {
+      type: DataTypes.SMALLINT,
+      allowNull: true,
+      defaultValue: 1
+    },
+    InheritDeptRule: {
+      type: DataTypes.SMALLINT,
+      allowNull: true,
+      defaultValue: 1
+    },
+    EMPRIVILEGE: {
+      type: DataTypes.SMALLINT,
+      allowNull: true,
+      defaultValue: 0
+    },
+    CardNo: {
+      type: DataTypes.STRING(20),
+      allowNull: true
+    },
+    FaceGroup: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      defaultValue: 0
+    },
+    AccGroup: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      defaultValue: 1
+    },
+    UseAccGroupTZ: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      defaultValue: 1
+    },
+    VerifyCode: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      defaultValue: 0
+    },
+    Expires: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      defaultValue: 0
+    },
+    ValidCount: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      defaultValue: 0
+    },
+    ValidTimeBegin: {
+      type: DataTypes.DATE,
+      allowNull: true
+    },
+    ValidTimeEnd: {
+      type: DataTypes.DATE,
+      allowNull: true
+    },
+    TimeZone1: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      defaultValue: 1
+    },
+    TimeZone2: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      defaultValue: 0
+    },
+    TimeZone3: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      defaultValue: 0
     }
   }, {
     sequelize,

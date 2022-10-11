@@ -1,10 +1,15 @@
 const Sequelize = require('sequelize');
+
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('CHECKINOUT', {
     USERID: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      references: {
+        model: 'USERINFO',
+        key: 'USERID'
+      }
     },
     CHECKTIME: {
       type: DataTypes.DATE,
@@ -25,6 +30,24 @@ module.exports = function(sequelize, DataTypes) {
     SENSORID: {
       type: DataTypes.STRING(5),
       allowNull: true
+    },
+    Memoinfo: {
+      type: DataTypes.STRING(30),
+      allowNull: true
+    },
+    WorkCode: {
+      type: DataTypes.STRING(24),
+      allowNull: true,
+      defaultValue: "0"
+    },
+    sn: {
+      type: DataTypes.STRING(20),
+      allowNull: true
+    },
+    UserExtFmt: {
+      type: DataTypes.SMALLINT,
+      allowNull: true,
+      defaultValue: 0
     }
   }, {
     sequelize,

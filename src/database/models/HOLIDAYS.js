@@ -43,6 +43,16 @@ module.exports = function(sequelize, DataTypes) {
     MINZU: {
       type: DataTypes.STRING(50),
       allowNull: true
+    },
+    DeptID: {
+      type: DataTypes.SMALLINT,
+      allowNull: true,
+      defaultValue: 1
+    },
+    timezone: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      defaultValue: 0
     }
   }, {
     sequelize,

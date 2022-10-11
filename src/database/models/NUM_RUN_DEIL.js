@@ -28,6 +28,10 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       allowNull: true,
       defaultValue: -1
+    },
+    OverTime: {
+      type: DataTypes.INTEGER,
+      allowNull: true
     }
   }, {
     sequelize,

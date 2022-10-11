@@ -53,7 +53,8 @@ module.exports = function(sequelize, DataTypes) {
     },
     MODIFYBY: {
       type: DataTypes.STRING(20),
-      allowNull: true
+      allowNull: true,
+      defaultValue: "Temp-Supervisor"
     },
     DATE: {
       type: DataTypes.DATE,
